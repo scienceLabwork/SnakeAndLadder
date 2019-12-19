@@ -1,3 +1,4 @@
+#Created by Rudra Shah 11-B DIN UPDATED AND REMOVED BUGS
 import random
 import time
 
@@ -39,9 +40,15 @@ for RangeTime in range(0,101):
     time.sleep(0.1)
     if RangeTime==random.randint(0,101):
         time.sleep(7)
-    print('Starting Snake AND Ladders---%d\r'%RangeTime,end="")
+    print('Starting Snake AND Ladders---%d%%\r'%RangeTime,end="")
 
 print("\nSo let\'s have a cheerful Match of Snakes And Ladders between \'%s\'"%user1name.upper(),"and","\'%s\'"%user2name.upper())
+Roll = { 
+    1:"|",
+    2:"/",
+    3:"-",
+    4:"\ "
+}
 
 ladder = { #7LADDERS
     4:14, #14
@@ -78,15 +85,18 @@ helpMeOut = [
     'H',
     'h'
 ]
-
+for roller in range(1,5):
+    time.sleep(0.3)
+    False
 
 try:
     while True:
         enterInput1 = input("\n%s It\'s your chance!!....Press \"ENTER\" to roll a dice"%user1name.upper())
         if enterInput1 == "":
-            print("Rolling dice")
-            for i in range(0,3):
-                time.sleep(1)
+            for jk in range(0,3):
+                for roller in range(1,5):
+                    time.sleep(0.3)
+                    print(" Rolling dice %s\r"%Roll[roller],end="")
             diceRolled = random.randint(1,6)
             print("You rolled it",diceRolled)
             oldStep = userSteps
@@ -106,6 +116,7 @@ try:
                     print("you travelled from",oldStep,"to",userSteps)
             if userSteps>=100:
                 print("\nGame over!! CONGRATULATIONS!!",user1name,"WON THE SNAKE & LADDER GAME")
+                Exit()
                 break
         elif enterInput1 in helpMeOut:
             helpMe()
@@ -118,9 +129,10 @@ try:
 
         enterInput2 = input("\n%s It\'s your chance!!....Press \"ENTER\" to roll a dice"%user2name.upper())
         if enterInput2 == "":
-            print("Rolling dice")
-            for i in range(0,3):
-                time.sleep(1)
+            for jkl in range(0,3):
+                for roller in range(1,5):
+                    time.sleep(0.3)
+                    print(" Rolling dice %s\r"%Roll[roller],end="")
             diceRolled = random.randint(1,6)
             print("You rolled it",diceRolled)
             oldStep2 = userSteps2
@@ -139,7 +151,8 @@ try:
                 else:
                     print("you travelled from",oldStep2,"to",userSteps2)
             if userSteps2>=100:
-                print("\nGame over!! CONGRATULATIONS!!",user2name,"WON THE SNAKE & LADDER GAME")
+                print("\nGame over!! CONGRATULATIONS!!",user2name.upper(),"WON THE SNAKE & LADDER GAME")
+                Exit()
                 break
         elif enterInput1 in helpMeOut:
             helpMe()
