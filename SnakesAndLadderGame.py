@@ -1,4 +1,3 @@
-#Created by Rudra Shah 11-B DIN
 import random
 import time
 
