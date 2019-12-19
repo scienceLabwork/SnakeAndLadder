@@ -45,24 +45,24 @@ for RangeTime in range(0,101):
 print("\nSo let\'s have a cheerful Match of Snakes And Ladders between \'%s\'"%user1name.upper(),"and","\'%s\'"%user2name.upper())
 
 ladder = { #7LADDERS
-    4:10, #14
-    9:22, #31
-    21:21, #42
-    28:56, #84
-    51:16, #67
-    71:20, #91
-    80:20 #100
+    4:14, #14
+    9:31, #31
+    21:42, #42
+    28:84, #84
+    51:67, #67
+    71:91, #91
+    80:100 #100
 }
 
 snakes = { #8SNAKES
-    17:10, #7
-    54:20, #34
-    62:43, #19
-    64:4, #60
-    87:63, #24
-    93:20, #73
-    95:20, #75
-    98:19 #79
+    17:7, #7
+    54:34, #34
+    62:19, #19
+    64:60, #60
+    87:24, #24
+    93:73, #73
+    95:75, #75
+    98:79 #79
 }
 
 exitOutput = [
@@ -98,7 +98,7 @@ try:
                 print("OHH! you climb up the stairs from",oldStepLadder,"to",userSteps)
             elif userSteps in snakes:
                 oldsnakeStep = userSteps
-                userSteps-=snakes[userSteps]
+                userSteps=snakes[userSteps]
                 print("You are eatten by a snake, You have climbed back to",userSteps,"from",oldsnakeStep)
             else:
                 if userSteps>=100:
